@@ -1,6 +1,14 @@
 import React from 'react';
 
-export const Card = () => {
+interface Props {
+  name: string
+}
+
+
+
+export const Card = (props: Props) => {
+
+  const {name} = props
 
   const [faceUp, setFaceUp] = React.useState(false)
 
@@ -13,14 +21,14 @@ export const Card = () => {
     <>
       <div className={faceUp ? "flip-card flip-card-clicked" : "flip-card"} onClick={toggleTurn}>
         <div className="flip-card-inner">
-          <div className="flip-card-front">
-            {faceUp ? "front" : "back"}
+          <div id={`${name}-back`} className="flip-card-back">
+            Back
             {/*<img src={"img_avatar.png"}
                  alt="Avatar"
                  style={{width:"300px", height:"300px"}}/>*/}
           </div>
-          <div className="flip-card-back">
-            {faceUp ? "front" : "back"}
+          <div id={`${name}-front`} className="flip-card-front">
+            {name}
           </div>
         </div>
       </div>

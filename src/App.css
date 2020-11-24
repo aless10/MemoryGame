@@ -27,12 +27,12 @@
     backface-visibility: hidden;
 }
 
-.flip-card-front {
+.flip-card-back {
     background-color: #bbb;
     color: black;
 }
 
-.flip-card-back {
+.flip-card-front {
     background-color: #2980b9;
     color: white;
     transform: rotateY(180deg);
